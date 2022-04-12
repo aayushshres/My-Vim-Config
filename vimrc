@@ -103,3 +103,9 @@ autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%,
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType c map <buffer> <F9> :w<CR> :!gcc % -o %< && ./%< <CR>
 autocmd FileType cpp map <buffer> <F9> :w<CR> :!g++ % -o %< && ./%< <CR>
+
+" Skeleton Code for C
+:autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
+
+" Skeleton Code of CPP
+:autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
