@@ -43,9 +43,8 @@ if (has("termguicolors"))
 endif
 hi Normal guibg=NONE ctermbg=NONE
 
-" Nerd Commenter
-nmap <C-_> <Plug>NERDCommenterToggle
-vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
 
 " Indent for Special file
 autocmd FileType c,cpp setlocal expandtab shiftwidth=2 softtabstop=2 cindent
@@ -104,8 +103,14 @@ autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellesca
 autocmd FileType c map <buffer> <F9> :w<CR> :!gcc % -o %< && ./%< <CR>
 autocmd FileType cpp map <buffer> <F9> :w<CR> :!g++ % -o %< && ./%< <CR>
 
+"Source bash
+autocmd FileType sh map <buffer> <F9> :w<CR> : !chmod +x % && source % <CR>
+
 " Skeleton Code for C
 :autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
 
 " Skeleton Code of CPP
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+
+"Skeleton Code of sh
+:autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
