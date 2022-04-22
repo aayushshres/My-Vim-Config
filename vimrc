@@ -79,6 +79,10 @@ let g:airline_powerline_fonts = 1
 " let g:airline_right_sep = ''
 " let g:airline_theme= 'deus'
 let g:airline_theme= 'onedark'
+let g:airline_symbols = {}
+let g:airline_symbols.linenr = ' ⭡ '
+let g:airline_symbols.colnr = 'C:'
+
 " previous buffer
 nmap <leader>1 :bp<CR> 
 " next buffer
