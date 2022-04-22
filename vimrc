@@ -42,11 +42,11 @@ call plug#end()
 " Color Scheme
 set background=dark
 "colorscheme dracula
-"colorscheme gruvbox
+colorscheme gruvbox
 "colorscheme monokai
 "colorscheme srcery
 "colorschem deus
-colorscheme onedark
+"colorscheme onedark
 if (has("termguicolors"))
     set termguicolors
 endif
@@ -81,7 +81,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme= 'onedark'
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = ' ⭡ '
-let g:airline_symbols.colnr = 'C:'
+let g:airline_symbols.colnr = ''
 
 " previous buffer
 nmap <leader>1 :bp<CR> 
