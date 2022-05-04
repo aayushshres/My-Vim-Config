@@ -12,8 +12,9 @@ set noswapfile
 "set mouse=a         "Uncomment for mouse support
 set ttyfast
 set signcolumn=yes
-"set colorcolumn=80  "Uncomment to draw a colorcolumn 
+"set colorcolumn=80  "Uncomment to draw a colorcolumn
 set showtabline=2
+set linebreak
 syntax enable
 
 call plug#begin("~/.vim/plugged")
@@ -42,11 +43,11 @@ call plug#end()
 " Color Scheme
 set background=dark
 "colorscheme dracula
-colorscheme gruvbox
+" colorscheme gruvbox
 "colorscheme monokai
 "colorscheme srcery
 "colorschem deus
-"colorscheme onedark
+colorscheme onedark
 if (has("termguicolors"))
     set termguicolors
 endif
@@ -81,14 +82,14 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme= 'onedark'
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = ' ⭡ '
-let g:airline_symbols.colnr = ''
+let g:airline_symbols.colnr = ' '
 
 " previous buffer
-nmap <leader>1 :bp<CR> 
+nmap <leader>1 :bp<CR>
 " next buffer
-nmap <leader>2 :bn<CR> 
+nmap <leader>2 :bn<CR>
 " delet buffer
-nmap <leader>q :bd<CR> 
+nmap <leader>q :bd<CR>
 " new buffer
 nmap <leader>t :enew<CR>
 
@@ -135,6 +136,8 @@ autocmd FileType c map <buffer> <F9> :w<CR> :!clear;gcc % -o %< && ./%<<CR>
 autocmd FileType cpp map <buffer> <F9> :w<CR> :!clear;g++ % -o %< && ./%<<CR>
 autocmd FileType sh map <buffer> <F9> :w<CR> : !chmod +x % && source % <CR>
 
+" Remove white space
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Skeleton Code for C
 :autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
@@ -144,5 +147,5 @@ autocmd FileType sh map <buffer> <F9> :w<CR> : !chmod +x % && source % <CR>
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
 
 
-"Skeleton Code of sh
+" Skeleton Code of sh
 :autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
