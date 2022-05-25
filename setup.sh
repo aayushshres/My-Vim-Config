@@ -5,7 +5,7 @@ linux_setup(){    # vimrc setup for Linux
     sleep 3
     cp vimrc ~/.vimrc
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     mkdir ~/.vim/templates
     cp Templates/skeleton.c ~/.vim/templates/skeleton.c
     cp Templates/skeleton.cpp ~/.vim/templates/skeleton.cpp
@@ -58,36 +58,36 @@ do
         sudo dnf install nodejs
         linux_setup
         input_check=1
-    elif [[ $osChoice -eq 3]]   # For MacOS
+    elif [[ $osChoice -eq 3 ]]   # For MacOS
     then
         echo "Make sure you have Homebrew Installed!!"
         echo "1. Yes I have Installed Homebrew"
-        echo "2. No I have not Installed Homebrew" 
+        echo "2. No I have not Installed Homebrew"
         echo -n "Enter your choice: "
         read brew_choice
 
         while [ brew_check -eq 0]
         do
-            if [[ $brew_choice -eq 1]]
+            if [[ $brew_choice -eq 1 ]]
             then
                 continue
                 brew_check=1
-            elif [[ $brew_choice -eq 2]]
+            elif [[ $brew_choice -eq 2 ]]
             then
                 echo "1.If you want this script to install Homebrew to your system"
                 echo "2. If you want to install Homebrew manually"
                 echo -n "Enter your choice: "
                 read brewinstall_choice
 
-                while [ brewInstall_check -eq 0]
+                while [ brewInstall_check -eq 0 ]
                 do
-                    if [[ $brewinstall_choice -eq 1]]
+                    if [[ $brewinstall_choice -eq 1 ]]
                     then
                         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
                         brewInstall_check=1
-                    elif [[ $brewinstall_choice -eq 2]]
+                    elif [[ $brewinstall_choice -eq 2 ]]
                     then
-                        break 
+                        break
                         brewInstall_check=1
                     else
                         echo "Invalid Input!! Try Again!!!"
