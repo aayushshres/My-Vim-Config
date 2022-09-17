@@ -59,7 +59,7 @@ do
         linux_setup
         input_check=1
     
-    elif [[ $osChoice -eq 3]]
+    elif [[ $osChoice -eq 3 ]] # For Debian
     then
         sudo apt install vim
         sudo apt install git
