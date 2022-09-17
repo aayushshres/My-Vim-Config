@@ -38,7 +38,7 @@ sleep 2
 # Checking Operating System
 while [ $input_check -eq 0 ]
 do
-    echo "1.Arch    2.Fedora     3.MacOS"
+    echo "1.Arch    2.Fedora     3.Debian     4.MacOS"
     echo -n "Enter your choice: "
     read osChoice
 
@@ -58,7 +58,17 @@ do
         sudo dnf install nodejs
         linux_setup
         input_check=1
-    elif [[ $osChoice -eq 3 ]]   # For MacOS
+    
+    elif [[ $osChoice -eq 3]]
+    then
+        sudo apt install vim
+        sudo apt install git
+        sudo apt install cmake
+        sudo dnf install nodejs && npm
+        linux_setup
+        input_check=1
+
+    elif [[ $osChoice -eq 4 ]]   # For MacOS
     then
         echo "Make sure you have Homebrew Installed!!"
         echo "1. Yes I have Installed Homebrew"
