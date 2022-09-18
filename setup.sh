@@ -64,7 +64,7 @@ do
         sudo apt install vim
         sudo apt install git
         sudo apt install cmake
-        sudo dnf install nodejs && npm
+        sudo apt install nodejs && npm
         linux_setup
         input_check=1
 
