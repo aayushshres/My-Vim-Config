@@ -1,14 +1,20 @@
 # My Vim Config
-A simple configuration to turn your vim into Python and C/C++ IDE.
 
-# Setup
+A simple configuration to turn your vim into a simple IDE.
+
+# Basic Setup
+
 * Run `setup.sh`.
 * Install Plugins using `:PlugInstall`.
-* Run `:CocInstall coc-json coc-tsserver coc-clangd coc-python`.
-* Add the following in `coc-settings.json`
-`
+
+## Conquer of Completion Setup
+
+* [Language servers](https://github.com/neoclide/coc.nvim/wiki/Language-servers) for Coc.
+* Run `CocInstall coc-clangd coc-pyright coc-java coc-tsserver coc-markdownlint coc-sh`.
+* Add `"suggest.noselect":true` in `coc-settings.json`
+
+```
 {
     "suggest.noselect":true
 }
-`
-* Restart vim.
+```
